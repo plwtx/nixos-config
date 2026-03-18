@@ -1,0 +1,7 @@
+# Files below might contain my sensitive information hence I will not be pushing them. However you can add your own accounts.nix and hardware-configuration.nix probably will be generated automatically during the installation process of NixOS.
+
+# Personal / sensitive NixOS modules
+accounts.nix
+
+# Hardware UUIDs
+hardware-configuration.nix
