@@ -46,6 +46,10 @@
     vesktop      # Better discord.
     libheif      # HEIF image format decoder / encoder.
     figma-linux  # Electron version of Figma.
+    tree         # Recursive directory listing command.    
+    amberol      # GUI Music player.
+    eartag       # Yes I need to edit tags as well.
+
 
     # Shortcut for running app with GPU (ex: gpu google-chrome-stable):
     #(writeShellScriptBin "gpu" ''

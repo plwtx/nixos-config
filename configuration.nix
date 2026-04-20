@@ -12,6 +12,7 @@
     ./aliases.nix
     ./applications.nix
     ./accounts.nix
+    ./nvidia.nix
   ];
 
   # Enable the X11 windowing system.
