@@ -16,11 +16,12 @@
   # Vite / Development local host ports:
   networking.firewall = {
     enable           = true;
-    allowedTCPPorts  = [ 3333 ];
-    allowedUDPPortRanges = [
-      { from = 3332; to = 3999; }
-      { from = 6663; to = 6669; }
-    ];
+    allowedUDPPorts  = [ 3333 53317 ];
+    allowedTCPPorts  = [ 3333 53317 ];
+  #  allowedUDPPortRanges = [
+  #    { from = 3332; to = 3999; }
+  #    { from = 6663; to = 6669; }
+  #  ];
   };
 
   # Open ports in the firewall.

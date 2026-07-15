@@ -31,13 +31,13 @@
     htop         # Resource Monitor.
     hyfetch      # Better neofetch :3
     #remmina     # RDP Client.
-    #nomachine-client # not-FOSS RDP client.
+    nomachine-client # not-FOSS RDP client.
     #mullvad     # Len's VPN choice.
     #mullvad-browser # Mullvad Browser (testing)
     #libimobiledevice # Data transfer between IOS and Linux.
     #ifuse       # For IOS data connection.
     #insomnia    # Open-Source API client.
-    #prismlauncher # Better Minecraft launcher.
+    prismlauncher # Better Minecraft launcher.
     anydesk
     pixieditor   # 2.0 / FOSS 2D Image Editor / As of 12.11.2025 not working.
     nodejs_24    # New version of node Jan2026.
@@ -49,7 +49,13 @@
     tree         # Recursive directory listing command.    
     amberol      # GUI Music player.
     eartag       # Yes I need to edit tags as well.
-
+    efibootmgr   # Windog corrupted my boot order with its bs forced update.
+    fnm          # Fast node version manager.
+    imagemagick  # For converting to webp mainly.
+    localsend    # Local network file sharing.
+    bruno        # Open Source IDE for Testing API's
+    postgresql   # PostgreSQL (open source object-relational database system)
+    dbeaver-bin  # GUI for PostgreSQL and others. 
 
     # Shortcut for running app with GPU (ex: gpu google-chrome-stable):
     #(writeShellScriptBin "gpu" ''
