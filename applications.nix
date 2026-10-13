@@ -6,6 +6,10 @@
   # Install firefox via the programs helper (preferred over systemPackages).
   programs.firefox.enable = true;
 
+
+  # USB connection to IOS:
+  services.usbmuxd.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -34,8 +38,9 @@
     nomachine-client # not-FOSS RDP client.
     #mullvad     # Len's VPN choice.
     #mullvad-browser # Mullvad Browser (testing)
-    #libimobiledevice # Data transfer between IOS and Linux.
-    #ifuse       # For IOS data connection.
+    libimobiledevice # Data transfer between IOS and Linux.
+    ifuse        # For IOS data connection.
+    usbmuxd      # another thing for IOS connection.
     #insomnia    # Open-Source API client.
     prismlauncher # Better Minecraft launcher.
     anydesk
@@ -43,7 +48,8 @@
     nodejs_24    # New version of node Jan2026.
     pngquant     # Tool to convert 24/32-bit RGBA PNGs to 8-bit palette with alpha channel preserved
     jpegoptim    # pngquant alternative for jpg format.
-    vesktop      # Better discord.
+    vesktop     # Better Discord. (AUG2026: Too many bugs) (OCT2026: Trying again.)
+    #discord      # Actual Discord client. 
     libheif      # HEIF image format decoder / encoder.
     figma-linux  # Electron version of Figma.
     tree         # Recursive directory listing command.    
@@ -56,6 +62,18 @@
     bruno        # Open Source IDE for Testing API's
     postgresql   # PostgreSQL (open source object-relational database system)
     dbeaver-bin  # GUI for PostgreSQL and others. 
+    ladybird     # A new browser I want to test.
+    zed-editor   # Code editor. (Open source) (Want to replace VSCode)
+    appimage-run # Running appimage.
+    mplayer      # For VSCode keyboard sounds.    
+    lm_sensors   # Sensor information
+    lapce        # Light code editor.
+    pavucontrol  # To make audio input over 100%
+    whois        # who ? 
+    krita        # ofcourse.
+    audacity     # Audio editor with GUI
+    
+   
 
     # Shortcut for running app with GPU (ex: gpu google-chrome-stable):
     #(writeShellScriptBin "gpu" ''
@@ -64,6 +82,7 @@
     #   exec "$@"
     #'')
   ];
+
 
   # Excluded Packages (GNOME)
   environment.gnome.excludePackages = (with pkgs; [

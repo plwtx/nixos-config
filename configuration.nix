@@ -6,13 +6,13 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
-    ./boot.nix
-    ./network.nix
-    ./aliases.nix
-    ./applications.nix
-    ./accounts.nix
-    ./nvidia.nix
+    ./hardware-configuration.nix # Hardware settings.
+    ./boot.nix            # Boot (Grub) related settings.
+    ./network.nix         # Network related settings.
+    ./aliases.nix         # Terminal aliases.
+    ./applications.nix    # Installed applications.
+    ./accounts.nix        # Config for account related settings.
+    ./nvidia.nix          # Confir for graphics driver.        
   ];
 
   # Enable the X11 windowing system.
@@ -43,6 +43,13 @@
     #jack.enable = true;
   };
 
+  # Screen share fix for Vesktop
+  xdg.portal = { 
+    enable = true; 
+    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+    config.common.default = [ "gnome" ]; 
+  }; 
+
   # Set your time zone.
   time.timeZone = "Europe/Warsaw";
 
@@ -60,6 +67,24 @@
     LC_TELEPHONE      = "pl_PL.UTF-8";
     LC_TIME           = "pl_PL.UTF-8";
   };
+
+  # GNOME Workspace alt tab switch lock:
+  programs.dconf.enable = true;
+
+   programs.dconf.profiles.user.databases = [{
+     settings = {
+     "org/gnome/shell/app-switcher" = {
+      current-workspace-only = true;
+    };
+     "org/gnome/shell/window-switcher" = {
+      current-workspace-only = true;
+    };
+   };
+  }];
+
+
+  # Cooler control for fans (FIX: on idle it becomes loud sometimes.)
+  programs.coolercontrol.enable = true;
 
   # Nix-ld global enable
   programs.nix-ld.enable = true;

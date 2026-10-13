@@ -37,6 +37,19 @@
 
     # Run app with NVIDIA GPU offload (PRIME)
     gpu-blender = "__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia blender";
-    gpu         = "__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia";
+    # New (fixed ?):
+    gpu = "__NV_PRIME_RENDER_OFFLOAD=1 __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0 __GLX_VENDOR_LIBRARY_NAME=nvidia __VK_LAYER_NV_optimus=NVIDIA_only";
+    
+    # OLD:
+    #gpu         = "__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia";
+
+    # Run Zen browser:
+    zen="appimage-run zen.AppImage";
+    zen-gpu="__NV_PRIME_RENDER_OFFLOAD=1 __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0 __GLX_VENDOR_LIBRARY_NAME=nvidia __VK_LAYER_NV_optimus=NVIDIA_only appimage-run zen.AppImage";
+    
+    # Kill Chrome:
+    kill-chrome = "pkill -f 'share/google/chrome/chrome'";    
+
+
   };
 }
